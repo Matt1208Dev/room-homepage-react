@@ -1,1 +1,7 @@
-
+.app {
+    min-width: 375px;
+    max-width: 1300px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
