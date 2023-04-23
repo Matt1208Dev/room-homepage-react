@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Slider.css";
 import desktopHero1 from "../../Assets/images/desktop-image-hero-1.jpg";
 import desktopHero2 from "../../Assets/images/desktop-image-hero-2.jpg";
@@ -44,9 +44,26 @@ export default function Slider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [previousSlide, setPreviousSlide] = useState(0);
     const [animationLock, setAnimationLock] = useState(false);
-    console.log(sliderData, currentSlide);
 
-    const prevSlide = (e) => {
+    useEffect(() => {
+        document.addEventListener("keyup", handleKeyUp);
+
+        return () => {
+            document.removeEventListener("keyup", handleKeyUp);
+        };
+    }, [currentSlide, previousSlide, animationLock]);
+
+    const handleKeyUp = (e) => {
+        if (e.key === "ArrowLeft") {
+            prevSlide();
+        } else if (e.key === "ArrowRight") {
+            nextSlide();
+        } else {
+            return;
+        }
+    };
+
+    const prevSlide = () => {
         if (animationLock === false) {
             setAnimationLock(true);
             setPreviousSlide(currentSlide);
@@ -55,8 +72,8 @@ export default function Slider() {
             } else {
                 setCurrentSlide(currentSlide - 1);
             }
-
             slideRef.current.classList.add("active-top");
+            animSliderTxt();
             setTimeout(() => {
                 slideRef.current.classList.remove("active-top");
                 setAnimationLock(false);
@@ -66,7 +83,7 @@ export default function Slider() {
         }
     };
 
-    const nextSlide = (e) => {
+    const nextSlide = () => {
         if (animationLock === false) {
             setAnimationLock(true);
             setPreviousSlide(currentSlide);
@@ -77,6 +94,7 @@ export default function Slider() {
             }
 
             slideRef.current.classList.add("active-bottom");
+            animSliderTxt("reverse");
             setTimeout(() => {
                 slideRef.current.classList.remove("active-bottom");
                 setAnimationLock(false);
@@ -87,6 +105,26 @@ export default function Slider() {
     };
 
     const slideRef = useRef();
+    const slideTxtRef = useRef([]);
+
+    const addToSlideTxtRef = (el) => {
+        if (el && !slideTxtRef.current.includes(el)) {
+            slideTxtRef.current.push(el);
+        }
+    };
+
+    function animSliderTxt(direction) {
+        slideTxtRef.current.forEach((element) => {
+            direction && direction === "reverse"
+                ? element.classList.add("active-reverse")
+                : element.classList.add("active");
+            setTimeout(() => {
+                direction && direction === "reverse"
+                    ? element.classList.remove("active-reverse")
+                    : element.classList.remove("active");
+            }, 600);
+        });
+    }
 
     return (
         <>
@@ -97,22 +135,26 @@ export default function Slider() {
                     src={sliderData[previousSlide].desktop}
                     alt={sliderData[previousSlide].alt}
                     title={sliderData[previousSlide].title}
+                    srcSet={`${sliderData[previousSlide].mobile} 375w, ${sliderData[previousSlide].desktop} 1360w`}
+                    sizes="100vw"
                 />
                 <img
                     ref={slideRef}
                     src={sliderData[currentSlide].desktop}
                     alt={sliderData[currentSlide].alt}
                     title={sliderData[currentSlide].title}
+                    srcSet={`${sliderData[currentSlide].mobile} 375w, ${sliderData[currentSlide].desktop} 1360w`}
+                    sizes="100vw"
                 />
             </div>
             <header>
-                <h1 className="header-title">
+                <h1 ref={addToSlideTxtRef} className="header-title">
                     {sliderData[currentSlide].headerTitle}
                 </h1>
-                <p className="header-txt">
+                <p ref={addToSlideTxtRef} className="header-txt">
                     {sliderData[currentSlide].headerTxt}
                 </p>
-                <div className="cta">
+                <div ref={addToSlideTxtRef} className="cta">
                     <a href="#" className="cta-link">
                         Shop now
                     </a>

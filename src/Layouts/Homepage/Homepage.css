@@ -16,26 +16,26 @@
 /* Section About */
 .about {
     width: 100%;
-    max-height: 240px;
+    min-height: 240px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 /* Image sombre */
 .about .img-dark {
     max-width: 380px;
-    flex-basis: 380px;
+    object-fit: cover;
+    /* flex-basis: 380px; */
     /* flex-grow: 1; */
-    flex-shrink: 1;
 }
 
 /* Image claire */
 .about .img-light {
     max-width: 396px;
-    flex-basis: 396px;
+    object-fit: cover;
+    /* flex-basis: 396px; */
     /* flex-grow: 1; */
-    flex-shrink: 1;
 }
 
 /* Contenu texte */
@@ -61,4 +61,68 @@
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .home .slider-controls {
+        transform-origin: right bottom;
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .home {
+        flex-wrap: wrap;
+    }
+
+    .home .slider {
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .home header {
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .home .slider-controls {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        left: unset;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .about {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about-txt {
+        padding-block: 3rem;
+        font-size: 1rem;
+        flex-grow: 1;
+    }
+
+    .about-txt h2 {
+        font-size: 0.9rem;
+    }
+
+    .home header,
+    .about-txt {
+        padding-inline: 9%;
+    }
+
+    .home .header-title {
+        font-size: 2.2rem;
+    }
+
+    .home .header-txt {
+        font-size: 1rem;
+    }
+
+    .home .cta {
+        margin-top: 1rem;
+    }
 }
