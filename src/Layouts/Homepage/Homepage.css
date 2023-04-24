@@ -63,18 +63,22 @@
     margin-bottom: 1rem;
 }
 
+/* Devices < 400px */
 @media screen and (max-width: 400px) {
+    /* Boutons du slider importé */
     .home .slider-controls {
         transform-origin: right bottom;
         transform: scale(0.8);
     }
 }
 
+/* Devices < 989px */
 @media screen and (max-width: 989px) {
     .home {
         flex-wrap: wrap;
     }
 
+    /* Slider importé */
     .home .slider {
         flex-grow: 1;
         max-width: 100%;
@@ -93,7 +97,9 @@
     }
 }
 
+/* Devices < 1099px */
 @media screen and (max-width: 1099px) {
+    /* Section about */
     .about {
         flex-wrap: wrap;
         justify-content: center;
@@ -109,6 +115,7 @@
         font-size: 0.9rem;
     }
 
+    /* header du Slider importé */
     .home header,
     .about-txt {
         padding-inline: 9%;

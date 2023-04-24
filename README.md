@@ -1,9 +1,36 @@
-# Getting Started with Create React App
+# Page d'accueil d'un site de vente de mobilier design
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Rappel des objectifs
 
-## Available Scripts
+CHALLENGE proposé par le site [Front-end Mentor](https://www.frontendmentor.io).
 
+Le challenge consiste à :
+- coder la page de manière responsive pour des devices allant de 375 à 1440px
+- intégrer un Slider permettant le défilement via des boutons de navigation sur la page ou les curseurs du clavier
+- Pour les plus petites résolutions, le Slider doit utiliser des images de plus petites résolutions et par conséquent plus légères.
+
+# Compétences mobilisées
+
+- Connaissances globales CSS
+- Flexbox
+- Media Queries
+- React :
+    - Raisonnement en terme de composants
+    - Hooks (useState, useRef, useEffect)
+
+# Ce que ce projet m'a apporté
+
+- Comprendre l'importance de mentionner TOUTES les dépendances d'un useEffect
+- Mieux utiliser le srcset d'une balise img
+- Coordonner l'usage de Flexbox et les Media Queries pour garder le visuel recherché
+- Connaître l'intérêt et utiliser la propriété CSS isolation
+- Augmenter la rapidité de ma réflexion sur les animations
+
+# Remerciements
+
+Merci à Front-end Mentor pour le challenge. Merci également à [Kevin Powell](https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw) de m'avoir fait découvrir la propriété CSS isolation, qui répondait à la problématique que je rencontrais pour mon Slider.
+
+# Scripts
 In the project directory, you can run:
 
 ### `npm start`
@@ -13,11 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -38,33 +60,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

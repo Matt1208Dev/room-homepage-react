@@ -41,10 +41,16 @@ export default function Slider() {
         },
     ]);
 
+    // Slide visible
     const [currentSlide, setCurrentSlide] = useState(0);
+    // Slide précédente
     const [previousSlide, setPreviousSlide] = useState(0);
+    // "Bridage" de 600ms entre chaque défilement de nouvelle slide
     const [animationLock, setAnimationLock] = useState(false);
+    // Référence à la slide visible
+    const slideRef = useRef();
 
+    // Écoute du clavier /défilement des slides
     useEffect(() => {
         document.addEventListener("keyup", handleKeyUp);
 
@@ -63,6 +69,7 @@ export default function Slider() {
         }
     };
 
+    // Défilement vers la gauche
     const prevSlide = () => {
         if (animationLock === false) {
             setAnimationLock(true);
@@ -72,10 +79,10 @@ export default function Slider() {
             } else {
                 setCurrentSlide(currentSlide - 1);
             }
-            slideRef.current.classList.add("active-top");
+            slideRef.current.classList.add("active-left");
             animSliderTxt();
             setTimeout(() => {
-                slideRef.current.classList.remove("active-top");
+                slideRef.current.classList.remove("active-left");
                 setAnimationLock(false);
             }, 600);
         } else {
@@ -83,6 +90,7 @@ export default function Slider() {
         }
     };
 
+    // Défilement vers la droite
     const nextSlide = () => {
         if (animationLock === false) {
             setAnimationLock(true);
@@ -93,10 +101,10 @@ export default function Slider() {
                 setCurrentSlide(currentSlide + 1);
             }
 
-            slideRef.current.classList.add("active-bottom");
+            slideRef.current.classList.add("active-right");
             animSliderTxt("reverse");
             setTimeout(() => {
-                slideRef.current.classList.remove("active-bottom");
+                slideRef.current.classList.remove("active-right");
                 setAnimationLock(false);
             }, 600);
         } else {
@@ -104,7 +112,7 @@ export default function Slider() {
         }
     };
 
-    const slideRef = useRef();
+    // Animation du contenu texte du Slider
     const slideTxtRef = useRef([]);
 
     const addToSlideTxtRef = (el) => {
@@ -131,7 +139,6 @@ export default function Slider() {
             <div className="slider">
                 <img
                     className="previous-slide"
-                    ref={slideRef}
                     src={sliderData[previousSlide].desktop}
                     alt={sliderData[previousSlide].alt}
                     title={sliderData[previousSlide].title}

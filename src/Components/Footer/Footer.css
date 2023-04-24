@@ -1,0 +1,25 @@
+/* Global */
+footer {
+    width: 100%;
+    padding: 1rem 2.5rem 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-color: #000;
+    color: #f1f1f1;
+}
+
+/* Attributions */
+.attribution a, .author {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.attribution a {
+    color: #f1f1f1;
+    transition: color 0.2s ease-out;
+}
+
+.attribution a:hover {
+    color: var(--dark-gray);
+}

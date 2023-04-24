@@ -1,4 +1,4 @@
-/* Slider */
+/* Slider styles globaux */
 .slider {
     max-width: 760px;
     position: relative;
@@ -7,6 +7,7 @@
     overflow: hidden;
 }
 
+/* Image du Slider */
 .slider img {
     width: 100%;
     height: 100%;
@@ -14,6 +15,7 @@
     object-fit: cover;
 }
 
+/* Positionnement slide précédente */
 .slider .previous-slide {
     position: absolute;
     top: 0;
@@ -21,22 +23,46 @@
     z-index: -1;
 }
 
-.slider img.active-top {
+/* Animation d'apparition des slides */
+.slider img.active-left {
     animation: slideInByRight 0.4s ease-out;
 }
 
-.slider img.active-bottom {
+.slider img.active-right {
     animation: slideInByLeft 0.4s ease-out;
 }
 
-/* Boutons de contrôle */
-.slider-controls {
-    display: flex;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+@keyframes slideInByRight {
+    0% {
+        /* transform-origin: right;
+        transform: scaleX(0); */
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        /* transform-origin: right;
+        transform: scaleX(1); */
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
+@keyframes slideInByLeft {
+    0% {
+        /* transform-origin: right;
+        transform: scaleX(0); */
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        /* transform-origin: right;
+        transform: scaleX(1); */
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /* Header */
 header {
@@ -60,14 +86,6 @@ header {
     font-weight: 600;
     line-height: 1;
     transform-style: preserve-3d;
-}
-
-.header-title.active, .header-txt.active, .cta.active {
-    animation: textReveal 0.6s ease-out;
-}
-
-.header-title.active-reverse, .header-txt.active-reverse, .cta.active-reverse {
-    animation: textRevealReverse 0.6s ease-out;
 }
 
 /* Contenu texte */
@@ -110,6 +128,51 @@ header {
     fill: var(--dark-gray);
 }
 
+/* Animation d'apparition des textes */
+.header-title.active,
+.header-txt.active,
+.cta.active {
+    animation: textReveal 0.6s ease-out;
+}
+
+.header-title.active-reverse,
+.header-txt.active-reverse,
+.cta.active-reverse {
+    animation: textRevealReverse 0.6s ease-out;
+}
+
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+@keyframes textRevealReverse {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+/* Boutons de contrôle */
+.slider-controls {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
 .slider-btn {
     width: 72px;
     height: 72px;
@@ -123,70 +186,4 @@ header {
 
 .slider-btn:hover {
     background-color: var(--very-dark-gray);
-}
-
-@keyframes slideInByRight {
-    0% {
-        /* transform-origin: right;
-        transform: scaleX(0); */
-        opacity: 0;
-        transform: translateX(100%);
-    }
-
-    100% {
-        /* transform-origin: right;
-        transform: scaleX(1); */
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInByLeft {
-    0% {
-        /* transform-origin: right;
-        transform: scaleX(0); */
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    100% {
-        /* transform-origin: right;
-        transform: scaleX(1); */
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes textReveal {
-    0% {
-        /* transform-origin: right;
-        transform: scaleX(0); */
-        opacity: 0;
-        transform: rotateY(90deg);
-    }
-
-    100% {
-        /* transform-origin: right;
-        transform: scaleX(1); */
-        opacity: 1;
-        transform: rotateY(0);
-
-    }
-}
-
-@keyframes textRevealReverse {
-    0% {
-        /* transform-origin: right;
-        transform: scaleX(0); */
-        opacity: 0;
-        transform: rotateY(-90deg);
-    }
-
-    100% {
-        /* transform-origin: right;
-        transform: scaleX(1); */
-        opacity: 1;
-        transform: rotateY(0);
-
-    }
 }
