@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/room-homepage-react/static/css/main.6be5164d.css",
+    "main.js": "/room-homepage-react/static/js/main.b9c57ae7.js",
+    "static/media/desktop-image-hero-1.jpg": "/room-homepage-react/static/media/desktop-image-hero-1.91901d0d47ea68db9434.jpg",
+    "static/media/desktop-image-hero-3.jpg": "/room-homepage-react/static/media/desktop-image-hero-3.05fd679aa0d31e01c176.jpg",
+    "static/media/desktop-image-hero-2.jpg": "/room-homepage-react/static/media/desktop-image-hero-2.9d35405672f4fca67945.jpg",
+    "static/media/mobile-image-hero-1.jpg": "/room-homepage-react/static/media/mobile-image-hero-1.5de3d1472db703fb2f8a.jpg",
+    "static/media/mobile-image-hero-2.jpg": "/room-homepage-react/static/media/mobile-image-hero-2.51db290a00388a5a0bea.jpg",
+    "static/media/image-about-dark.jpg": "/room-homepage-react/static/media/image-about-dark.329bbc446c27ddf69d0f.jpg",
+    "static/media/mobile-image-hero-3.jpg": "/room-homepage-react/static/media/mobile-image-hero-3.601d0f37f7ff5e62008c.jpg",
+    "index.html": "/room-homepage-react/index.html",
+    "main.6be5164d.css.map": "/room-homepage-react/static/css/main.6be5164d.css.map",
+    "main.b9c57ae7.js.map": "/room-homepage-react/static/js/main.b9c57ae7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6be5164d.css",
+    "static/js/main.b9c57ae7.js"
+  ]
+}
